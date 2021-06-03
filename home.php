@@ -15,53 +15,134 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Home | diff-it</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .cc {
+            background-color: #F4ECF7;
+        }
+    </style>
 
 </head>
 
 <body>
 
+    <input type="text" id="aid" value="<?php echo $_SESSION['id'] ?>" hidden>
+    <input type="text" id="aname" value="<?php echo $_SESSION['username'] ?>" hidden>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.php">diff_it</a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php">diff-it</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="home.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
 
-        <div class="navbar-collapse collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-bg nav-link" href="home.php"> Home </a></li>
-                <li class="nav-item"><a class="nav-link nav-bg" href="#"> Posts </a></li>
-                <li class="nav-item"><a class="nav-link nav-bg" href="#"> About </a></li>
-                <li class="nav-item"><a class="nav-link nav-bg" href="#"> Contact </a></li>
-
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i> <?php echo $_SESSION['username'] ?> </a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="logout.php"><i class="bi bi-box-arrow-right"></i>
-                        Logout</a></li>
-            </ul>
-
+                </ul>
+                <ul class="navbar-nav d-flex">
+                    <li class=" nav-item">
+                        <a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i>
+                            <?php
+                            if (isset($_SESSION['username'])) {
+                                echo $_SESSION['username'];
+                            } else {
+                                echo "username";
+                            } ?>
+                        </a>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <div class="container">
 
-        <h1>This is Home Page</h1>
+        <h1 class="text-center">This is Home Page</h1>
 
-    </div>
+        <div class="text-center border rounded border-dark p-2 mb-5">
+            <form class="postFormId">
+                <div class="input-group">
+                    <textarea class="form-control mb-2" id="postTitleId" placeholder="write your topic......" required></textarea>
+                </div>
+                <button type="submit" id="postSubmitId" class="btn btn-dark"><strong>Post it</strong></button>
+
+            </form>
+        </div>
+
+        <div id="postDiv">
+        </div>
+
+        <!--
+
+        <div class="border rounded border-primary p-2 mb-5 cc">
+            <h4 class="text-center mt-2 border border-primary p-2">This is the title of a topic</h4>
+            <table class="table table-light table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">Points</th>
+                        <th class="text-center">Side A</th>
+                        <th class="text-center">Side B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td class="text-center">This is part A of this topic</td>
+                        <td class="text-center"><button pid="55" class='btn btn-sm btn-primary cmtPartx'>Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="border rounded border-primary p-2 mb-5 cc">
+            <h4 class="text-center mt-2 border border-primary p-2">This is the title of a topic</h4>
+            <table class="table table-light table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">Points</th>
+                        <th class="text-center">Side A</th>
+                        <th class="text-center">Side B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td class="text-center">This is part A of this topic</td>
+                        <td class="text-center"><button pid="56" class='btn btn-sm btn-primary cmtPartx'>Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        -->
 
 
-    <footer class="footer-fix">
-        <p id="copyrightid">Copyright &copy; HasiburRahman 2021</p>
-    </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <footer class="footer-fix">
+            <p id="copyrightid">Copyright &copy; HasiburRahman 2021</p>
+        </footer>
+
+
+        <script src="js/jquerymin.js"></script>
+
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </body>
 
