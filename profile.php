@@ -11,6 +11,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,7 +91,7 @@ if (!isset($_SESSION['username'])) {
                                 <h4 class="card-title">
                                     <?php
                                     echo $_SESSION['fname'], " ", $_SESSION['lname'];
-                                    echo "<br>@", $_SESSION['username']
+                                    echo "<br><i>@", $_SESSION['username'], "</i>";
                                     ?>
                                 </h4>
                                 <h6>
@@ -100,11 +101,11 @@ if (!isset($_SESSION['username'])) {
                                 </h6>
                                 <h8>
                                     <?php
-                                    echo "Social Media: ";
-                                    echo "<a href=", $_SESSION['slink'], ">Click</a>";
+                                    echo "Social Media Link: ";
+                                    echo "<a href=", $_SESSION['slink'], " target='_blank' >click here</a>";
                                     ?>
                                 </h8>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                     </div>
@@ -113,6 +114,37 @@ if (!isset($_SESSION['username'])) {
             <div class="col">
             </div>
         </div>
+        <hr>
+        <h5 class="text-center">All Posts</h5>
+        <hr>
+
+
+        <?php
+
+        include_once('backend/config.php');
+
+        $uid = $_SESSION['id'];
+
+        $sql = "SELECT posts_table.p_title FROM posts_table INNER JOIN users ON posts_table.a_id=users.id WHERE users.id={$uid} ORDER BY posts_table.p_id DESC";
+        $result = $mysqli->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+                <div class='border rounded border-primary p-2 mb-5 cc'>
+                    <h4 class='text-center mt-2 border border-primary p-2'> <?php echo $row['p_title'] ?>
+                        <a href="#" class="btn btn-dark btn-sm">View This Post</a>
+                    </h4>
+                </div>
+
+        <?php
+            }
+        }
+        ?>
+
+
+
+
 
     </div>
 
