@@ -9,7 +9,7 @@ This is a simple raw php project with jQuery, Ajax and simple auth. <br>
 
 > The purpose of that project is to generate that idea and practice on php with ajax.
 
-### Click Here For [Screenshots](link)
+### Click Here For [Screenshots](https://github.com/HRahman1777/diff-it/blob/19180f358f3cd137561566abf8f182b4b7faedbb/index.md)
 
 <hr>
 
