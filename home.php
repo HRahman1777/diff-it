@@ -86,51 +86,6 @@ if (!isset($_SESSION['username'])) {
         <div id="postDiv">
         </div>
 
-        <!--
-
-        <div class="border rounded border-primary p-2 mb-5 cc">
-            <h4 class="text-center mt-2 border border-primary p-2">This is the title of a topic</h4>
-            <table class="table table-light table-hover table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th class="text-center">Points</th>
-                        <th class="text-center">Side A</th>
-                        <th class="text-center">Side B</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-center">1</td>
-                        <td class="text-center">This is part A of this topic</td>
-                        <td class="text-center"><button pid="55" class='btn btn-sm btn-primary cmtPartx'>Save</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="border rounded border-primary p-2 mb-5 cc">
-            <h4 class="text-center mt-2 border border-primary p-2">This is the title of a topic</h4>
-            <table class="table table-light table-hover table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th class="text-center">Points</th>
-                        <th class="text-center">Side A</th>
-                        <th class="text-center">Side B</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-center">1</td>
-                        <td class="text-center">This is part A of this topic</td>
-                        <td class="text-center"><button pid="56" class='btn btn-sm btn-primary cmtPartx'>Save</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        -->
-
-
-
 
         <footer class="footer-fix">
             <p id="copyrightid">Copyright &copy; HasiburRahman 2021</p>

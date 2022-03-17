@@ -9,7 +9,7 @@ $(document).ready(function () {
 
 
 
-    //read data ......................////////////////////////////////
+    //=========   read data ==============
     function readData() {
         txt = "";
         $.ajax({
@@ -23,13 +23,11 @@ $(document).ready(function () {
                     d = "no data";
                 }
 
-                //console.log("d= " + d.length);
                 for (i = 0; i < d.length; i++) {
                     a = d[i].p_id;
                     myPid = { pid: a };
                     txtp = "";
 
-                    ////////////////////  nested        ajax
                     $.ajax({
                         url: "backend/point_read.php",
                         method: "POST",
@@ -44,7 +42,6 @@ $(document).ready(function () {
                                 pd = res2;
                             }
                             cnt = 1;
-                            //console.log("pd= " + pd.length);
                             for (ii = 0; ii < pd.length; ii++) {
                                 if (pd[ii].p_a == null && pd[ii].p_b != null) {
                                     txtp += "<tr><td class='text-center'>" + cnt + "</td><td class='text-center'>type..</td><td class='text-center'>" + pd[ii].p_b + "</td></tr>";
@@ -72,8 +69,7 @@ $(document).ready(function () {
 
     };
 
-    //insert post data ......................////////////////////////////////
-
+    //===================      insert post data ====================
     $("#postSubmitId").on("click", function (e) {
         e.preventDefault();
 
@@ -112,7 +108,7 @@ $(document).ready(function () {
 
 
 
-    // comment write POINT adding ...................//////////////////////////
+    //================ comment write POINT adding =======================
     $(document).on("click", ".cmtPart", function () {
         let pid = $(this).attr("pid");
         let part = $(this).attr("part");
@@ -122,40 +118,26 @@ $(document).ready(function () {
 
 
         if (part == 'a') {
-            //console.log("this is a");
+
             c = "a";
             x = "#ta" + pid;
-            //handling empty write text ....
-            /*if ($(x).val() == 'empty') {
-                neww = "no";
-                tPart = $(x).val();
-            } */
 
             if ($(x).val() != '') {
-                //neww = "yes";
                 tPart = $(x).val() + "<b><i>[-by @" + aname + "]";
             }
             else {
                 tPart = $(x).val();
-                //neww = "";
             }
 
             //console.log(tPart);
         } else {
-            //console.log("this is b");
             c = "b";
             x = "#tb" + pid;
-            //handling empty write text ....
-            /*if ($(x).val() == 'empty') {
-                neww = "no";
-                tPart = $(x).val();
-            } */
+
             if ($(x).val() != '') {
-                //neww = "yes";
                 tPart = $(x).val() + "<b><i>[-by @" + aname + "]";
             } else {
                 tPart = $(x).val();
-                //neww = "";
             }
             //console.log(tPart);
         }
@@ -168,14 +150,6 @@ $(document).ready(function () {
             success: function (res) {
                 if (res == "1") {
                     //console.log("success: " + res);
-                    /*Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: '',
-                        showConfirmButton: false,
-                        timer: 1000
-                    });*/
-                    //$("#postTitleId").val("");
                 } else {
                     Swal.fire({
                         icon: 'error',

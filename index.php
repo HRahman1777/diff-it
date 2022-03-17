@@ -61,9 +61,12 @@ session_start();
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container text-center">
 
-        <h1>This is index page</h1>
+        <h1>Welcome to the fight to find differences.</h1>
+        <hr>
+        <h3>Let's find out the differences of somethings.</h3>
+        <p>To enter the area you need to pass though simple authentication (Signup / Login)...</p>
 
     </div>
 
