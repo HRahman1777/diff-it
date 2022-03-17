@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+# Project Description 
+This is a simple raw php project with jQuery, Ajax and simple auth. <br>
 
-You can use the [editor on GitHub](https://github.com/HRahman1777/diff-it/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+- The concept is user can post a topic.
+- Based on that topic there will be 2 parts like difference table.
+- One part should defend another part. Those part may carry differences of that topic as a points of the table.
+- If one part is on lead then another part have to fill the top point to add new point.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+---
 
-### Markdown
+### Ajax use only to create post and add points.(In home page)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Screenshots
 
-```markdown
-Syntax highlighted code block
+## Main Index Page
+<img alt="Index" style="border-width:240" height="480" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/index.png" />
+ 
+## Sign Up
+<img alt="Index" style="border-width:240" height="480" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/signup.png" />
+ 
+## Login
+<img alt="Index" style="border-width:240" height="480" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/login.png" />
+ 
+## Home Page - First Post
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/post10.png" />
 
-# Header 1
-## Header 2
-### Header 3
+## First Post Side B
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/post11.png" />
 
-- Bulleted
-- List
+## First Post Complete
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/post12.png" />
 
-1. Numbered
-2. List
+## Second Post
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/post20.png" />
 
-**Bold** and _Italic_ and `Code` text
+## Second Post Part A Lead
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/post21.png" />
 
-[Link](url) and ![Image](src)
-```
+## Second Post Part B
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/post22.png" />
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## User Profile
+<img alt="Index" style="border-width:240" height="680" src="https://raw.githubusercontent.com/HRahman1777/diff-it/main/screenshots/profile.png" />
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/HRahman1777/diff-it/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+<br>
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+---
